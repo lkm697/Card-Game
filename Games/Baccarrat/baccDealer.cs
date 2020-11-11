@@ -1,9 +1,5 @@
 ﻿using Card_Game.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Card_Game.Games.Baccarrat
 {
@@ -39,7 +35,7 @@ namespace Card_Game.Games.Baccarrat
             }
 
             burnCards = new Card[burn + 1];
-            burnCards[0] =  mainShoe.Dequeue(); //burn card
+            burnCards[0] = mainShoe.Dequeue(); //burn card
             // cards to be burned
             for (int i = 1; i <= burn; i++)
             {
@@ -58,7 +54,7 @@ namespace Card_Game.Games.Baccarrat
 
             Card banker3 = new Card();
             Card player3 = new Card();
-            
+
 
             currentHand.bankerTotal = banker1.faceValue + banker2.faceValue;
             currentHand.playerTotal = player1.faceValue + player2.faceValue;
@@ -417,7 +413,7 @@ namespace Card_Game.Games.Baccarrat
 
 
             }
-            
+
             return currentHand;
 
         }

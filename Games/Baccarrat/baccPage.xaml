@@ -5,9 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Card_Game.Games.Baccarrat"
       mc:Ignorable="d" 
-      d:DesignHeight="700" d:DesignWidth="820"
+      d:DesignHeight="700" d:DesignWidth="850"
       Title="baccPage" FontFamily="Helvetica">
-    <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0">
+    <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,0,0,0">
         <Label Content="Player Cards" HorizontalAlignment="Left" Height="30" Margin="132,373,0,0" VerticalAlignment="Top" Width="85"/>
         <Label Content="Banker Cards" HorizontalAlignment="Left" Height="30" Margin="463,371,0,0" VerticalAlignment="Top" Width="85"/>
         <TextBlock x:Name="playerCard1" HorizontalAlignment="Left" Height="25" Margin="125,340,0,0" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Width="70" TextAlignment="Center"/>

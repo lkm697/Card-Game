@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Card_Game.Games.BlackJack
+﻿namespace Card_Game.Games.BlackJack
 {
     static class Stats
     {

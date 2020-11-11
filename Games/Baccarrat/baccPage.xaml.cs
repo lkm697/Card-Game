@@ -1,18 +1,10 @@
 ﻿using Card_Game.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Card_Game.Games.Baccarrat
 {
@@ -25,14 +17,16 @@ namespace Card_Game.Games.Baccarrat
         private int bankerCounter;
         private int playerCounter;
         private int tieCounter;
-        private int handCount;
+        private int handCount = 0;
+        private int shoeCount = 0;
         private decimal currentBet;
-        private decimal chipStack = 1000;
+        private decimal chipStack = playerOne.bankRoll;
 
         public baccPage()
         {
             InitializeComponent();
             resetScreen();
+            shoeCount = currentShoe.Count;
         }
 
 
@@ -261,6 +255,12 @@ namespace Card_Game.Games.Baccarrat
         {
             chipStack += change;
             chipStackTextBlock.Text = $"$ {chipStack}";
+            playerOne.bankRoll += change;
+            if (handCount != 0 && shoeCount != 0 )
+            {
+                playerOne.shoeProgress = (double)handCount / (double)shoeCount * 100;
+            }
+
         }
 
         private void handBet(HandResult result)
@@ -330,6 +330,7 @@ namespace Card_Game.Games.Baccarrat
             if (convert && stack > 0)
             {
                 chipStack = stack;
+                playerOne.bankRoll = stack;
                 chipStackTextBlock.IsReadOnly = true;
                 chipStackButton.Visibility = Visibility.Hidden;
                 chipStackTextBlock.Text = $"$ {chipStack}";

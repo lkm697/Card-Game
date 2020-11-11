@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Card_Game.Models
+﻿namespace Card_Game.Models
 {
     public class Card
     {
         private int _faceValue;
         public SuitType Suit { get; set; }
         public string imageSourceString { get; set; }
-            
+
 
         public int faceValue
         {
-            get {
+            get
+            {
                 if (_faceValue > 10)
                 {
                     return 10;
@@ -22,7 +19,7 @@ namespace Card_Game.Models
             }
             private set { }
 
-            
+
         }
 
         public Card(int i, SuitType suit)
@@ -57,5 +54,5 @@ namespace Card_Game.Models
             Suit = SuitType.Clubs;
             imageSourceString = $@"/images/card deck/back-blue-2.png";
         }
-   }
+    }
 }

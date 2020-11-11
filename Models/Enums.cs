@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Card_Game.Models
+﻿namespace Card_Game.Models
 {
-     public enum SuitType
+    public enum SuitType
     {
         Spades,
         Hearts,
@@ -12,12 +8,6 @@ namespace Card_Game.Models
         Clubs
     }
 
-    public enum HandResult
-    {
-        Banker,
-        Player,
-        Tie,
-        Error
-    }
+
 }
 

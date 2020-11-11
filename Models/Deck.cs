@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Card_Game.Models
 {
@@ -22,7 +19,7 @@ namespace Card_Game.Models
         private Queue<Card> buildDeck(int deckCount = 1)
         {
 
-            List<Card> tempdeck = new List<Card>(deckCount*52);
+            List<Card> tempdeck = new List<Card>(deckCount * 52);
 
             while (deckCount > 0)
             {
@@ -41,7 +38,7 @@ namespace Card_Game.Models
                 deckCount--;
             }
 
-            
+
             Queue<Card> shuffled = shuffle(tempdeck);
             return shuffled;
         }
