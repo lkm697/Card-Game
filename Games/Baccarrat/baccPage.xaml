@@ -1,0 +1,67 @@
+﻿<Page x:Class="Card_Game.Games.Baccarrat.baccPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Card_Game.Games.Baccarrat"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="820"
+      Title="baccPage" FontFamily="Helvetica">
+    <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0">
+        <Label Content="Player Cards" HorizontalAlignment="Left" Height="30" Margin="132,373,0,0" VerticalAlignment="Top" Width="85"/>
+        <Label Content="Banker Cards" HorizontalAlignment="Left" Height="30" Margin="463,371,0,0" VerticalAlignment="Top" Width="85"/>
+        <TextBlock x:Name="playerCard1" HorizontalAlignment="Left" Height="25" Margin="125,340,0,0" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Width="70" TextAlignment="Center"/>
+        <TextBlock x:Name="playerCard2" HorizontalAlignment="Left" Height="25" Margin="250,340,0,0" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" Width="70" TextAlignment="Center"/>
+        <TextBlock x:Name="playerCard3" HorizontalAlignment="Left" Height="25" Margin="25,294,0,0" TextWrapping="Wrap" Text="Player 3" VerticalAlignment="Top" Width="70" TextAlignment="Center" />
+        <TextBlock x:Name="bankerCard1" HorizontalAlignment="Left" Height="25" Margin="450,338,0,0" TextWrapping="Wrap" Text="Banker 1" VerticalAlignment="Top" Width="70" TextAlignment="Center"/>
+        <TextBlock x:Name="bankerCard2" HorizontalAlignment="Left" Height="25" Margin="575,338,0,0" TextWrapping="Wrap" Text="Banker 2" VerticalAlignment="Top" Width="70" TextAlignment="Center"/>
+        <TextBlock x:Name="bankerCard3" HorizontalAlignment="Left" Height="25" Margin="700,294,0,0" TextWrapping="Wrap" Text="Banker 3" VerticalAlignment="Top" Width="70" TextAlignment="Center"/>
+        <Label Content="Results:" HorizontalAlignment="Left" Height="25" Margin="264,126,0,0" VerticalAlignment="Top" Width="53"/>
+        <TextBlock x:Name="resultText" HorizontalAlignment="Left" Height="25" Margin="344,126,0,0" TextWrapping="Wrap" Text= "Start Game" VerticalAlignment="Top" Width="175" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" TextAlignment="Center"/>
+        <Button x:Name="dealNextHandButton" Content="Deal Next Hand" Height="35" Margin="250,432,0,0" Width="125" Click="dealNextHandButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Helvetica"/>
+        <Button x:Name="dealAllHandButton" Content="Deal All Hands" Height="35" Margin="463,432,0,0" Width="125" Click="dealAllHandButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock x:Name="playerResult" HorizontalAlignment="Left" Height="30" Margin="217,378,0,0" Text="0" VerticalAlignment="Top" Width="75" TextAlignment="Center"/>
+        <TextBlock x:Name="bankerResult" HorizontalAlignment="Left" Height="30" Margin="560,376,0,0" Text="0" VerticalAlignment="Top" Width="75" TextAlignment="Center"/>
+        <Button x:Name="newShoeButton" Content="New Shoe" Height="35" Width="125" Margin="630,20,0,0" Click="newShoeButton_Click" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+        <Image x:Name="playerOneImage" Height="100" Width="75" Margin="125,230,0,0" Source="/images/card deck/back-red-2.png"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Image x:Name="playerTwoImage" Height="100" Width="75" Margin="250,230,0,0" Source="/images/card deck/back-red-2.png"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Image x:Name="playerThreeImage" Height="100" Width="75" Margin="25,180,0,0" Source="/images/card deck/back-red-2.png"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+        <Image x:Name="bankerOneImage" Height="100" Width="75" Margin= "450,230,0,0" Source="/images/card deck/back-red-2.png" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Image x:Name="bankerTwoImage" Height="100" Width="75" Margin="575,230,0,0" Source="/images/card deck/back-red-2.png" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Image x:Name="bankerThreeImage" Height="100" Width="75" Margin="700,180,0,0" Source="/images/card deck/back-red-2.png" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+        <Label Content="Player Count:" HorizontalAlignment="Left" Height="28" Margin="50,450,0,0" VerticalAlignment="Top" Width="86"/>
+        <Label Content="Banker Count:" HorizontalAlignment="Left" Height="28" Margin="50,500,0,0" VerticalAlignment="Top" Width="86"/>
+        <Label Content="Tie Count:" HorizontalAlignment="Left" Height="28" Margin="50,550,0,0" VerticalAlignment="Top" Width="86"/>
+        <Label Content="Hand Count:" HorizontalAlignment="Left" Height="28" Margin="50,600,0,0" VerticalAlignment="Top" Width="86"/>
+
+
+        <TextBlock x:Name="playerCountTextBlock" HorizontalAlignment="Left" Height="22" Margin="150,455,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        <TextBlock x:Name="bankerCountTextBlock" HorizontalAlignment="Left" Height="22" Margin="150,505,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="25"/>
+        <TextBlock x:Name="tieCountTextBlock" HorizontalAlignment="Left" Height="22" Margin="150,555,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="25"/>
+        <TextBlock x:Name="handCountTextBlock" HorizontalAlignment="Left" Height="22" Margin="150,605,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="25"/>
+
+
+        <Button x:Name="removeAllBetsButton" Content= "Remove All Bets" HorizontalAlignment="Left" Height="22" Margin="325,591,0,-35" VerticalAlignment="Top" Width="115" Click="removeAllBetsButton_Click" />
+        <Button x:Name="_1dollarButton" Content= "$1" HorizontalAlignment="Left" Height="22" Margin="325,555,0,0" VerticalAlignment="Top" Width="35" PreviewMouseDown="_1dollarButton_PreviewMouseDown" />
+        <Button x:Name="_5dollarButton" Content="$5" HorizontalAlignment="Left" Height="22" Margin="365,555,0,0" VerticalAlignment="Top" Width="35" PreviewMouseDown="_5dollarButton_PreviewMouseDown" />
+        <Button x:Name="_25dollarButton" Content="$25" HorizontalAlignment="Left" Height="22" Margin="405,555,0,0" VerticalAlignment="Top" Width="35" PreviewMouseDown="_25dollarButton_MouseDown" />
+        <Label Content="Current Bet: " HorizontalAlignment="Left" Height="23" Margin="253,527,0,0" VerticalAlignment="Top" Width="87"/>
+        <TextBlock x:Name="currentBetTextBlock" HorizontalAlignment="Left" Height="23" Margin="340,532,0,0" Text="$0" VerticalAlignment="Top" Width="76" TextAlignment="Center"/>
+
+        <Label x:Name="greenWinLabel" Content="Win" HorizontalAlignment="Left" Height="25" Margin="475,527,0,0" VerticalAlignment="Top" Width="40" Background="#FF28CD28" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="redLoseLabel" Content="Lose" HorizontalAlignment="Left" Height="25" Margin="475,527,0,0" VerticalAlignment="Top" Width="40" Background="#FFEE452A" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Visibility="Hidden"/>
+        <Label x:Name="tieLabel" Content="Tie" HorizontalAlignment="Left" Height="25" Margin="475,527,0,0" VerticalAlignment="Top" Width="40" Background="#FFCCD5F0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Visibility="Hidden"/>
+        <TextBlock x:Name="amountWonTextBlock" HorizontalAlignment="Left" Height="20" Margin="520,532,0,0" Text="$0" VerticalAlignment="Top" Width="55" TextAlignment="Center" RenderTransformOrigin="0.548,0.3"/>
+
+        <RadioButton x:Name="bankerRadioButton" Content="Banker" HorizontalAlignment="Left" Height="20" Margin="300,500,0,0" VerticalAlignment="Top" Width="75" GroupName="betGroup" ClickMode="Press"/>
+        <RadioButton x:Name="playerRadioButton" Content="Player" HorizontalAlignment="Left" Height="20" Margin="425,500,0,0" VerticalAlignment="Top" Width="75" GroupName="betGroup" ClickMode="Press" IsChecked="True"/>
+
+        <Label Content="Chip Stack:" HorizontalAlignment="Left" Height="30" Margin="475,589,0,-1" VerticalAlignment="Top" Width="68"/>
+        <TextBox x:Name="chipStackTextBlock" HorizontalAlignment="Left" Height="22" Margin="550,591,0,0" Text="$0" VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" BorderBrush="#FF3367D8" IsReadOnly="True" IsTabStop="False" IsUndoEnabled="False" MouseDoubleClick="chipStackTextBlock_MouseDoubleClick" ScrollViewer.CanContentScroll="True" ToolTip="Double Click to Add" UndoLimit="1"/>
+        <Button x:Name="chipStackButton" Content="Confirm" HorizontalAlignment="Left" Height="25" Margin="550,619,0,0" VerticalAlignment="Top" Width="100" Visibility="Hidden" Click="chipStackButton_Click" Background="{x:Null}"/>
+
+    </Grid>
+</Page>

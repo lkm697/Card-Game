@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Card_Game.Games.Baccarrat;
+using Card_Game.Games.BlackJack;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +22,30 @@ namespace Card_Game
     /// </summary>
     public partial class MainWindow : Window
     {
+        blackjackPage blackjack = new blackjackPage();
+        baccPage baccarrat = new baccPage();
+
         public MainWindow()
         {
             InitializeComponent();
+            gameFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+            
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void blackjackNavBtn_Click(object sender, RoutedEventArgs e)
+        {
+            
+            gameFrame.Navigate(blackjack);
+        }
+
+        private void baccNavBtn_Click(object sender, RoutedEventArgs e)
+        {
+            gameFrame.Navigate(baccarrat);
         }
     }
 }

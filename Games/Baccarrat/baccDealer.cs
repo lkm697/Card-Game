@@ -11,7 +11,7 @@ namespace Card_Game.Games.Baccarrat
     {
 
         private static Queue<Card> mainShoe;
-        public static Queue<baccHand> completedHands;
+        public static Queue<baccHand> completedHands = buildRound();
         public static Card[] burnCards;
         private static int shoeSize;
 

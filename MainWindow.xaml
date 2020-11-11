@@ -37,12 +37,11 @@
                 <ColumnDefinition Width="8*" />
             </Grid.ColumnDefinitions>
             <Grid x:Name="navGrid" Grid.Column="0" HorizontalAlignment="Stretch">
-                <Button x:Name="baccNavBtn" Content="Baccarrat" Margin="0,200,0,0" FontSize="24" VerticalAlignment="Top" />
-                <Button x:Name="blackjackNavBtn" Content="Blackjack" Margin="0,250,0,0" FontSize="24" VerticalAlignment="Top" />
+                <Button x:Name="baccNavBtn" Content="Baccarrat" Margin="0,200,0,0" FontSize="24" VerticalAlignment="Top"  Click="baccNavBtn_Click"/>
+                <Button x:Name="blackjackNavBtn" Content="Blackjack" Margin="0,250,0,0" FontSize="24" VerticalAlignment="Top" Click="blackjackNavBtn_Click"/>
         </Grid>
-            <Grid x:Name="pageGrid" Grid.Column="1">
-
-            </Grid>
+                <Frame x:Name="gameFrame" Grid.Column="1"/>
+            
         </Grid>
         
     </DockPanel>
