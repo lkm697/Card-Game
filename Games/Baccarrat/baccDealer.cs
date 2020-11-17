@@ -28,7 +28,7 @@ namespace Card_Game.Games.Baccarrat
         private static void burnCard()
         {
 
-            int burn = mainShoe.Peek().faceValue;
+            int burn = mainShoe.Peek().blackjackValue;
             if (burn > 10)
             {
                 burn = 10;
@@ -56,8 +56,8 @@ namespace Card_Game.Games.Baccarrat
             Card player3 = new Card();
 
 
-            currentHand.bankerTotal = banker1.faceValue + banker2.faceValue;
-            currentHand.playerTotal = player1.faceValue + player2.faceValue;
+            currentHand.bankerTotal = banker1.blackjackValue + banker2.blackjackValue;
+            currentHand.playerTotal = player1.blackjackValue + player2.blackjackValue;
 
 
             // check natural 9
@@ -132,7 +132,7 @@ namespace Card_Game.Games.Baccarrat
             {
                 player3 = mainShoe.Dequeue();
 
-                currentHand.playerTotal += player3.faceValue;
+                currentHand.playerTotal += player3.blackjackValue;
             }
 
 
@@ -182,10 +182,10 @@ namespace Card_Game.Games.Baccarrat
             {
                 //6 draws
 
-                if (player3.faceValue == 6 || player3.faceValue == 7)
+                if (player3.blackjackValue == 6 || player3.blackjackValue == 7)
                 {
                     banker3 = mainShoe.Dequeue();
-                    currentHand.bankerTotal += banker3.faceValue;
+                    currentHand.bankerTotal += banker3.blackjackValue;
                 }
 
 
@@ -230,10 +230,10 @@ namespace Card_Game.Games.Baccarrat
             if (currentHand.bankerTotal == 5)
             {
 
-                if (player3.faceValue >= 4 && player3.faceValue <= 7 || player3.faceValue == 0)
+                if (player3.blackjackValue >= 4 && player3.blackjackValue <= 7 || player3.blackjackValue == 0)
                 {
                     banker3 = mainShoe.Dequeue();
-                    currentHand.bankerTotal += banker3.faceValue;
+                    currentHand.bankerTotal += banker3.blackjackValue;
                 }
 
                 currentHand.banker1 = banker1;
@@ -276,10 +276,10 @@ namespace Card_Game.Games.Baccarrat
             {
                 //4 draws
 
-                if (player3.faceValue >= 2 && player3.faceValue <= 7 || player3.faceValue == 0)
+                if (player3.blackjackValue >= 2 && player3.blackjackValue <= 7 || player3.blackjackValue == 0)
                 {
                     banker3 = mainShoe.Dequeue();
-                    currentHand.bankerTotal += banker3.faceValue;
+                    currentHand.bankerTotal += banker3.blackjackValue;
                 }
 
 
@@ -322,10 +322,10 @@ namespace Card_Game.Games.Baccarrat
             if (currentHand.bankerTotal == 3)
             {
                 //3 draws
-                if (player3.faceValue != 8)
+                if (player3.blackjackValue != 8)
                 {
                     banker3 = mainShoe.Dequeue();
-                    currentHand.bankerTotal += banker3.faceValue;
+                    currentHand.bankerTotal += banker3.blackjackValue;
                 }
 
 
@@ -372,7 +372,7 @@ namespace Card_Game.Games.Baccarrat
                 if (currentHand.bankerTotal <= 2)
                 {
                     banker3 = mainShoe.Dequeue();
-                    currentHand.bankerTotal += banker3.faceValue;
+                    currentHand.bankerTotal += banker3.blackjackValue;
                 }
 
 

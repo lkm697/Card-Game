@@ -86,8 +86,8 @@ namespace Card_Game.Games.BlackJack
             {
                 if (dealerCards[i] != null)
                 {
-                    dealerCardValue += dealerCards[i].faceValue;
-                    if (dealerCards[i].faceValue == 1 && dealerCardValue <= 11)
+                    dealerCardValue += dealerCards[i].blackjackValue;
+                    if (dealerCards[i].blackjackValue == 1 && dealerCardValue <= 11)
                     {
                         dealerCardValue += 10;
                         dealerAce = true;
@@ -98,8 +98,8 @@ namespace Card_Game.Games.BlackJack
             {
                 if (playerCards[k] != null)
                 {
-                    playerCardValue += playerCards[k].faceValue;
-                    if (playerCards[k].faceValue == 1 && playerCardValue <= 11)
+                    playerCardValue += playerCards[k].blackjackValue;
+                    if (playerCards[k].blackjackValue == 1 && playerCardValue <= 11)
                     {
                         playerCardValue += 10;
                         playerAce = true;

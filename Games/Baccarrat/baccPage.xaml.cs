@@ -54,34 +54,34 @@ namespace Card_Game.Games.Baccarrat
         {
 
             baccHand currentHand = currentShoe.Dequeue();
-            playerCard1.Text = currentHand.player1.faceValue.ToString();
-            playerCard2.Text = currentHand.player2.faceValue.ToString();
-            if (currentHand.player3.faceValue == 0)
+            playerCard1.Text = currentHand.player1.blackjackValue.ToString();
+            playerCard2.Text = currentHand.player2.blackjackValue.ToString();
+            if (currentHand.player3.blackjackValue == 0)
             {
                 playerCard3.Text = "No Draw";
             }
-            else if (currentHand.player3.faceValue == -1)
+            else if (currentHand.player3.blackjackValue == -1)
             {
                 playerCard3.Text = "Error";
             }
             else
             {
-                playerCard3.Text = currentHand.player3.faceValue.ToString();
+                playerCard3.Text = currentHand.player3.blackjackValue.ToString();
             }
 
-            bankerCard1.Text = currentHand.banker1.faceValue.ToString();
-            bankerCard2.Text = currentHand.banker2.faceValue.ToString();
-            if (currentHand.banker3.faceValue == 0)
+            bankerCard1.Text = currentHand.banker1.blackjackValue.ToString();
+            bankerCard2.Text = currentHand.banker2.blackjackValue.ToString();
+            if (currentHand.banker3.blackjackValue == 0)
             {
                 bankerCard3.Text = "No Draw";
             }
-            else if (currentHand.banker3.faceValue == -1)
+            else if (currentHand.banker3.blackjackValue == -1)
             {
                 bankerCard3.Text = "Error";
             }
             else
             {
-                bankerCard3.Text = currentHand.banker3.faceValue.ToString();
+                bankerCard3.Text = currentHand.banker3.blackjackValue.ToString();
             }
 
             bankerResult.Text = currentHand.bankerTotal.ToString();
@@ -118,7 +118,7 @@ namespace Card_Game.Games.Baccarrat
             playerTwoImage.Source = new BitmapImage(new Uri(currentHand.player2.imageSourceString, UriKind.Relative));
 
 
-            if (currentHand.banker3.faceValue == 0)
+            if (currentHand.banker3.blackjackValue == 0)
             {
                 bankerThreeImage.Source = new BitmapImage(new Uri($@"/images/card deck/back-blue-2.png", UriKind.Relative));
             }
@@ -128,7 +128,7 @@ namespace Card_Game.Games.Baccarrat
 
             }
 
-            if (currentHand.player3.faceValue == 0)
+            if (currentHand.player3.blackjackValue == 0)
             {
                 playerThreeImage.Source = new BitmapImage(new Uri($@"/images/card deck/back-blue-2.png", UriKind.Relative));
             }

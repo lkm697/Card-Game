@@ -18,29 +18,21 @@ namespace Card_Game.Models
 
         private Queue<Card> buildDeck(int deckCount = 1)
         {
-
             List<Card> tempdeck = new List<Card>(deckCount * 52);
-
+            
             while (deckCount > 0)
             {
                 for (int i = 1; i < 14; i++)
                 {
-                    Card tempHearts = new Card(i, SuitType.Hearts);
-                    Card tempSpade = new Card(i, SuitType.Spades);
-                    Card tempClub = new Card(i, SuitType.Spades);
-                    Card tempDiamond = new Card(i, SuitType.Diamonds);
-
-                    tempdeck.Add(tempHearts);
-                    tempdeck.Add(tempSpade);
-                    tempdeck.Add(tempClub);
-                    tempdeck.Add(tempDiamond);
+                    tempdeck.Add(new Card(i, SuitType.Hearts));
+                    tempdeck.Add(new Card(i, SuitType.Spades));
+                    tempdeck.Add(new Card(i, SuitType.Diamonds));
+                    tempdeck.Add(new Card(i, SuitType.Clubs));
                 }
                 deckCount--;
             }
-
-
-            Queue<Card> shuffled = shuffle(tempdeck);
-            return shuffled;
+            
+            return new Queue<Card> (shuffle(tempdeck));
         }
 
         private Queue<Card> shuffle(List<Card> shoe)

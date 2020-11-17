@@ -30,7 +30,7 @@ namespace Card_Game.Games.BlackJack
                 //change to hide the second card and value
                 //dealerCardTwo.Source = new BitmapImage(new Uri(GameLogic.dealerCards[1].ImageSourceString, UriKind.Relative));
                 //dealerCountTextBlock.Text = GameLogic.dealerCardValue.ToString();
-                dealerCountTextBlock.Text = GameLogic.dealerCards[0].faceValue.ToString();
+                dealerCountTextBlock.Text = GameLogic.dealerCards[0].blackjackValue.ToString();
 
 
 

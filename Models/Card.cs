@@ -7,7 +7,7 @@
         public string imageSourceString { get; set; }
 
 
-        public int faceValue
+        public int blackjackValue
         {
             get
             {
@@ -54,5 +54,10 @@
             Suit = SuitType.Clubs;
             imageSourceString = $@"/images/card deck/back-blue-2.png";
         }
+
+        public static bool operator >(Card c1, Card c2) => c1._faceValue > c2._faceValue;
+        public static bool operator <(Card c1, Card c2) => c1._faceValue < c2._faceValue;
+        public static bool operator >=(Card c1, Card c2) => c1._faceValue >= c2._faceValue;
+        public static bool operator <=(Card c1, Card c2) => c1._faceValue <= c2._faceValue;
     }
 }
